@@ -30,7 +30,7 @@ public class MovieResource {
 		
 		PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
 		
-		Page<MovieDTO> list = service.findAllPagedByGenre(genreId, pageRequest);
+		Page<MovieDTO> list = service.findAllPaged(genreId, pageRequest);
 		return ResponseEntity.ok().body(list);
 	}
 	
