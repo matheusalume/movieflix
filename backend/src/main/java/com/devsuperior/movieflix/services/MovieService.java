@@ -35,6 +35,6 @@ public class MovieService {
 	public MovieDTO findById(Long id) {
 		Optional<Movie> obj = repository.findById(id);
 		Movie entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found"));
-		return new MovieDTO(entity);
+		return new MovieDTO(entity, entity.getReviews());
 	}
 }

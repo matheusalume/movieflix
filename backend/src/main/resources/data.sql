@@ -99,3 +99,10 @@ INSERT INTO tb_movie (title, sub_Title, year, img_Url, synopsis, genre_id) VALUE
  'http://br.web.img3.acsta.net/c_310_420/pictures/21/01/22/14/42/0771930.jpg',
  'Em Fale com as Abelhas, após a morte do pai, a médica Jean Markham (Anna Paquin) volta à sua cidade natal para assumir as funções do falecido. Quando ela começa a atender o jovem Charlie (Gregor Selkirk), conhece, no processo, a mãe dele, Lydia (Holliday Grainger), passando a se relacionar amorosamente com a mãe do rapaz.',
  5);
+ 
+ INSERT INTO tb_review (text, movie_Id, user_Id) VALUES ('Adorei o filme!', 1, 1);
+ 
+ 
+ 
+ 
+ 
