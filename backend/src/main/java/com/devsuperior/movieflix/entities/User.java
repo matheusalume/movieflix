@@ -24,6 +24,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable, UserDetails {
@@ -36,14 +38,18 @@ public class User implements Serializable, UserDetails {
 	
 	@Column(unique = true)
 	private String email;
+	
+	@JsonIgnore
 	private String password;
 	
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tb_user_role",
 		joinColumns = @JoinColumn(name = "user_id"),
 		inverseJoinColumns = @JoinColumn(name = "role_id"))	
 	private Set<Role> roles = new HashSet<>();
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Review> reviews = new ArrayList<>();
 	
